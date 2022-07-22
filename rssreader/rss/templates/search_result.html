@@ -1,0 +1,16 @@
+{% include 'navbar.html' %}
+
+{% block content %}
+<center>
+    {% if searched %}
+    <h1>Tražili ste  {{ searched }}</h1>
+    <br/>
+    {% for id in ids %}
+       <a href="{{ id.url_adress }}" >{{ id }} </a></br>
+    {% endfor %}
+    
+    {% else %}
+    <h1>Zaboravili ste unijeti pojam za pretraživanje..</h1>
+    {% endif %}
+</center>
+{% endblock %}

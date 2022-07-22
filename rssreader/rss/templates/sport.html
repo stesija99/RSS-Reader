@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% include 'navbar.html' %}
+{% block body %}
+<br />
+{% if ctx %}
+{% for entry in ctx %}
+
+
+<section class="u-align-center u-clearfix u-block-fc63-1" custom-posts-hash="[I,T]" data-id="fc63"
+  data-style="post-details-1" data-section-properties="{&quot;margin&quot;:&quot;both&quot;,&quot;stretch&quot;:true}"
+  id="sec-2622">
+  <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-block-fc63-2">
+    <div class="u-container-style u-post-details u-block-control u-expanded-width u-block-fc63-3"
+      style="min-height: 390px;  height: auto;" data-blog-post-id="6" data-block="90" data-block-type="PostDetails">
+      <div class="u-container-layout u-valign-top u-block-fc63-4" style="padding: 30px 30px 12.9412px;"
+        data-container-layout-dom="6" data-block-type="">
+
+
+        <h4 class="u-blog-control u-text u-block-control u-block-fc63-5"
+          style="margin-top: 19.9844px; margin-bottom: 0px; margin-left: 0px;" data-block="92"
+          data-block-type="PostHeader">
+          <a class="u-post-header-link" href="{{ entry.url_adress }}">{{ entry.name }}</a><br />
+        </h4>
+        <div class="u-blog-control u-metadata u-block-control u-block-fc63-8"
+          style="margin-top: 30px; margin-bottom: 0; margin-left: 0" data-block="93" data-block-type="Metadata">
+          <img src="{{ entry.image_url }}" style="height: 185.984px; margin: 0px auto 0px 0px; width: 380px;"><br />
+          <a href="{{ entry.url_adress }}" class=“btn btn-primary”>Pročitaj više...</a>
+
+          <br></br>
+          <span class="u-meta-category u-meta-icon">Kategorija: {{ entry.category }}</span><br></br>
+          <span class="u-meta-category u-meta-icon">Datum: {{ entry.pub_date }} </span>
+          <span class="u-meta-category u-meta-icon">Napisao: {{ entry.creator_name }}</span>
+
+        </div>
+      </div>
+</section>
+
+
+{% endfor %}
+{% endif %}
+{% endblock %}
